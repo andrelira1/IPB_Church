@@ -32,7 +32,7 @@ class MyAppState extends State<HomePage> {
       // home: UserList(), //--Teste
       home: Scaffold(
         appBar: AppBar(
-          title: Text('2ª IPB Petrolina'),
+          title: Text('2ª IPB Petrolina-PE'),
           backgroundColor: Color.fromARGB(199, 9, 120, 11),
         ),
         /*   body: Center(
