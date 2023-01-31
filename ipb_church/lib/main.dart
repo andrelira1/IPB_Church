@@ -5,19 +5,53 @@ import 'package:flutter/material.dart';
 //import 'package:ipb_church/components/user_login.dart';
 import 'package:ipb_church/firstpage.dart';
 //import 'package:ipb_church/homepage.dart';
-//import 'package:ipb_church/views/user_list.dart';
+import 'package:ipb_church/provider/users.dart';
+import 'package:ipb_church/routes/app_routes.dart';
+import 'package:ipb_church/views/user_form.dart';
+import 'package:ipb_church/views/user_list.dart';
+import 'package:provider/provider.dart';
 
 void main() {
   runApp(MyApp());
 }
 
-class MyApp extends StatefulWidget {
+/* class MyApp extends StatefulWidget {
   MyApp({Key? key}) : super(key: key);
+ */
 
+class MyApp extends StatelessWidget {
+//  const ({ Key? key }) : super(key: key);
   @override
-  MyAppState createState() => MyAppState();
+  // MyAppState createState() => MyAppState();
+  Widget build(BuildContext context) {
+    return MultiProvider(
+      providers: [
+        ChangeNotifierProvider(
+          create: (ctx) => Users(),
+        )
+      ],
+      child: MaterialApp(
+        title: 'App IPB',
+        theme: ThemeData(
+          primarySwatch: Colors.blue,
+          visualDensity: VisualDensity.adaptivePlatformDensity,
+        ),
+        // home: UserList(), //--Teste
+        // home: FirstPage(),
+        routes: {
+          AppRoutes.HOME: (_) => FirstPage(),
+          AppRoutes.USER_FORM: (_) => UserForm(),
+        },
+      ),
+    );
+    // home: UserLogin());
+  }
 }
 
+
+
+
+/* 
 class MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
@@ -26,7 +60,7 @@ class MyAppState extends State<MyApp> {
         home: FirstPage());
     // home: UserLogin());
   }
-}
+} */
 /*
 class FirstPage extends StatelessWidget {
   //const FirstPage({ Key? key }) : super(key: key);
