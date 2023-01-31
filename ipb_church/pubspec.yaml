@@ -61,6 +61,9 @@ flutter:
   assets:
     - assets/images/6048028.png
     - assets/images/logo-ipb-color.png
+    - assets/images/logo-ipb-branco.png
+    - assets/images/logoipb.jpg
+    - assets/images/5315605.png
 
   #  - C:\Users\andre.lira\OneDrive - IBACEM\Documentos\Programing\IPB_Church\ipb_church\assets\images\logo-ipb-color.png
   #    - assets\images\logo-ipb-color.png

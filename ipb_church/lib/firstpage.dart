@@ -1,32 +1,7 @@
-//import 'dart:html';
-import 'dart:ui';
-
 import 'package:flutter/material.dart';
-//import 'package:ipb_church/components/user_login.dart';
-import 'package:ipb_church/firstpage.dart';
-//import 'package:ipb_church/homepage.dart';
+import 'package:ipb_church/components/user_login.dart';
 //import 'package:ipb_church/views/user_list.dart';
 
-void main() {
-  runApp(MyApp());
-}
-
-class MyApp extends StatefulWidget {
-  MyApp({Key? key}) : super(key: key);
-
-  @override
-  MyAppState createState() => MyAppState();
-}
-
-class MyAppState extends State<MyApp> {
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-        // home: UserList(), //--Teste
-        home: FirstPage());
-    // home: UserLogin());
-  }
-}
 /*
 class FirstPage extends StatelessWidget {
   //const FirstPage({ Key? key }) : super(key: key);
@@ -43,10 +18,22 @@ class FirstPage extends StatelessWidget {
       ),
     );
   }
-}      
-       Scaffold(
+} */
+class FirstPage extends StatefulWidget {
+  //MyApp({Key? key}) : super(key: key);
+
+  @override
+  MyAppState createState() => MyAppState();
+}
+
+class MyAppState extends State<FirstPage> {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      // home: UserList(), //--Teste
+      home: Scaffold(
         appBar: AppBar(
-          title: Text('2ª IPB Petrolina'),
+          title: Text('2ª IPB Petrolina-PE'),
           backgroundColor: Color.fromARGB(199, 9, 120, 11),
         ),
         /*   body: Center(
@@ -60,9 +47,9 @@ class FirstPage extends StatelessWidget {
           backgroundColor: Colors.green[600],
           materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
           onPressed: () {
-            Navigator.push(
+            Navigator.pushReplacement(
               context,
-              MaterialPageRoute(builder: (context) => UserList()),
+              MaterialPageRoute(builder: (context) => UserLogin()),
             );
           },
           tooltip: 'Increment',
@@ -100,8 +87,9 @@ class FirstPage extends StatelessWidget {
                 //--FIM TESTE 3*/
                 //--TESTE 4
                 onPressed: () {
-                  Navigator.of(context).push(
-                    MaterialPageRoute(builder: (context) => UserList()),
+                  Navigator.of(context).pushReplacement(
+                    //MaterialPageRoute(builder: (context) => UserList()),
+                    MaterialPageRoute(builder: (context) => UserLogin()),
                   );
                 },
                 //--FIM TESTE 4
@@ -115,4 +103,3 @@ class FirstPage extends StatelessWidget {
     );
   }
 }
-*/
